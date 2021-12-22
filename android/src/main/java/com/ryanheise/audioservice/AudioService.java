@@ -698,8 +698,9 @@ public class AudioService extends MediaBrowserServiceCompat {
     public void onTaskRemoved(Intent rootIntent) {
         if (listener != null) {
             listener.onTaskRemoved();
-            listener.onStop();
         }
+        listener.onPause();
+        listener.onStop();
         super.onTaskRemoved(rootIntent);
     }
 
